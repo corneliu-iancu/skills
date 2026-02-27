@@ -2,11 +2,32 @@
   <img src="assets/banner.png" alt="Claude Code Configuration" width="100%">
 </p>
 
-# Claude Code Hooks
+# Claude Code Config
 
-Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) hooks — sound effects + automatic session notes.
+Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration — agents, skills, sound effects, and automatic session notes.
 
 ## What's Included
+
+### Agents (10)
+
+Specialized AI assistants with focused system prompts, invoked automatically by Claude Code based on task context.
+
+| Category | Agents |
+|----------|--------|
+| **Security** | `ext-security-auditor`, `ext-penetration-tester` |
+| **Code Quality** | `ext-code-reviewer`, `ext-architect-reviewer`, `ext-refactoring-specialist` |
+| **Reliability** | `ext-accessibility-tester`, `ext-performance-engineer`, `ext-debugger` |
+| **Documentation** | `ext-documentation-engineer`, `ext-legacy-modernizer` |
+
+### Skills (17)
+
+Domain knowledge and workflows loaded on-demand via `/skill-name` or automatic semantic matching.
+
+| Category | Skills |
+|----------|--------|
+| **Security & Auditing** | `ext-static-analysis`, `ext-insecure-defaults`, `ext-semgrep-rule-creator`, `ext-sentry-find-and-fix-bugs`, `ext-differential-review`, `ext-clawsec` |
+| **Code Quality** | `ext-sentry-code-review`, `ext-property-based-testing`, `ext-test-driven-development`, `ext-verification-before-completion`, `ext-systematic-debugging`, `ext-react-best-practices`, `ext-web-design-guidelines` |
+| **Architecture** | `ext-context-engineering`, `ext-recursive-decomposition`, `ext-subagent-driven-development`, `ext-skill-creator` |
 
 ### Sound Notifications
 
@@ -16,16 +37,17 @@ Hooks installed into `~/.claude/settings.json` that play sounds via `afplay`:
 |-------|-------|------|
 | `Notification` | `heart-beat.mp3` | Claude needs attention |
 | `Stop` | `cinematic-boom.wav` | Response finished |
+| `TaskCompleted` | `cash-register.mp3` | Ka-ching |
 
 ### Session Notes
 
-On `SessionEnd`, a background script summarizes the conversation transcript using an LLM and writes a markdown note to `~/Documents/LLM Engineering Notes/`. Trivial sessions (fewer than 4 user messages) are skipped. Supports Anthropic and AWS Bedrock — auto-detected from environment variables.
+On `SessionEnd`, a background script summarizes the conversation transcript using AWS Bedrock and writes a markdown note to `~/Documents/LLM Engineering Notes/`. Trivial sessions (fewer than 4 user messages) are skipped.
 
 ## Install
 
 ```bash
-git clone https://github.com/corneliu-iancu/claude-code-hooks.git
-cd claude-code-hooks
+git clone https://github.com/corneliu-iancu/claude-code-config.git
+cd claude-code-config
 ./install.sh
 ```
 
@@ -34,17 +56,18 @@ cd claude-code-hooks
 ## Repo Structure
 
 ```
-claude-code-hooks/
+claude-code-config/
 ├── install.sh                  # Merges hooks into ~/.claude/settings.json
 ├── settings-template.json      # Hook definitions (reference copy)
-├── play-sound.sh               # Sound player wrapper (never blocks, never fails)
+├── play-sound.sh               # afplay wrapper (never blocks, never fails)
 ├── sounds/
 │   ├── heart-beat.mp3
 │   ├── cinematic-boom.wav
+│   └── cash-register.mp3
 ├── .claude/
 │   └── hooks/
 │       ├── session-notes-wrapper.sh   # Captures stdin, backgrounds Python
-│       ├── session-notes.py           # Parses transcript, calls Anthropic or Bedrock
+│       ├── session-notes.py           # Parses transcript, calls Bedrock
 │       └── session-notes.conf.json    # Session notes configuration
 ├── assets/
 │   └── banner.png
@@ -76,7 +99,7 @@ Provider auto-detection checks for `ANTHROPIC_API_KEY` first, then `AWS_BEARER_T
 
 ## Requirements
 
-- **macOS** — sounds use `afplay`; **Linux** — sounds use `mpg123`/`ffplay` (MP3) or `aplay`/`paplay` (WAV)
+- **macOS** — sounds use `afplay`
 - **`jq`** — used by `install.sh` to merge JSON (`brew install jq`)
 - **Anthropic API key or AWS Bedrock credentials** — for session notes summarization
 
