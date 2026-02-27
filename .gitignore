@@ -1,3 +1,8 @@
+# OS / editor junk
+.DS_Store
+__pycache__/
+*.pyc
+
 # Personal configuration overrides
 .claude/settings.local.json
 .claude/CLAUDE.local.md

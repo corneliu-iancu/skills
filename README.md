@@ -4,9 +4,30 @@
 
 # Claude Code Config
 
-Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration — sound effects + automatic session notes.
+Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration — agents, skills, sound effects, and automatic session notes.
 
 ## What's Included
+
+### Agents (10)
+
+Specialized AI assistants with focused system prompts, invoked automatically by Claude Code based on task context.
+
+| Category | Agents |
+|----------|--------|
+| **Security** | `ext-security-auditor`, `ext-penetration-tester` |
+| **Code Quality** | `ext-code-reviewer`, `ext-architect-reviewer`, `ext-refactoring-specialist` |
+| **Reliability** | `ext-accessibility-tester`, `ext-performance-engineer`, `ext-debugger` |
+| **Documentation** | `ext-documentation-engineer`, `ext-legacy-modernizer` |
+
+### Skills (17)
+
+Domain knowledge and workflows loaded on-demand via `/skill-name` or automatic semantic matching.
+
+| Category | Skills |
+|----------|--------|
+| **Security & Auditing** | `ext-static-analysis`, `ext-insecure-defaults`, `ext-semgrep-rule-creator`, `ext-sentry-find-and-fix-bugs`, `ext-differential-review`, `ext-clawsec` |
+| **Code Quality** | `ext-sentry-code-review`, `ext-property-based-testing`, `ext-test-driven-development`, `ext-verification-before-completion`, `ext-systematic-debugging`, `ext-react-best-practices`, `ext-web-design-guidelines` |
+| **Architecture** | `ext-context-engineering`, `ext-recursive-decomposition`, `ext-subagent-driven-development`, `ext-skill-creator` |
 
 ### Sound Notifications
 
