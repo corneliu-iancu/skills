@@ -29,17 +29,6 @@ HOOKS=$(cat <<EOF
         ]
       }
     ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$REPO_DIR/play-sound.sh cinematic-boom.wav"
-          }
-        ]
-      }
-    ],
     "TaskCompleted": [
       {
         "matcher": "",
@@ -57,7 +46,7 @@ HOOKS=$(cat <<EOF
         "hooks": [
           {
             "type": "command",
-            "command": "$REPO_DIR/.claude/hooks/session-notes-wrapper.sh",
+            "command": "$REPO_DIR/hooks/session-notes-wrapper.sh",
             "timeout": 60000
           }
         ]

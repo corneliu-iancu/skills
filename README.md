@@ -1,107 +1,57 @@
-<p align="center">
-  <img src="assets/banner.png" alt="Claude Code Configuration" width="100%">
-</p>
+# Skills
 
-# Claude Code Config
-
-Global [Claude Code](https://docs.anthropic.com/en/docs/claude-code) configuration — agents, skills, sound effects, and automatic session notes.
-
-## What's Included
-
-### Agents (10)
-
-Specialized AI assistants with focused system prompts, invoked automatically by Claude Code based on task context.
-
-| Category | Agents |
-|----------|--------|
-| **Security** | `ext-security-auditor`, `ext-penetration-tester` |
-| **Code Quality** | `ext-code-reviewer`, `ext-architect-reviewer`, `ext-refactoring-specialist` |
-| **Reliability** | `ext-accessibility-tester`, `ext-performance-engineer`, `ext-debugger` |
-| **Documentation** | `ext-documentation-engineer`, `ext-legacy-modernizer` |
-
-### Skills (17)
-
-Domain knowledge and workflows loaded on-demand via `/skill-name` or automatic semantic matching.
-
-| Category | Skills |
-|----------|--------|
-| **Security & Auditing** | `ext-static-analysis`, `ext-insecure-defaults`, `ext-semgrep-rule-creator`, `ext-sentry-find-and-fix-bugs`, `ext-differential-review`, `ext-clawsec` |
-| **Code Quality** | `ext-sentry-code-review`, `ext-property-based-testing`, `ext-test-driven-development`, `ext-verification-before-completion`, `ext-systematic-debugging`, `ext-react-best-practices`, `ext-web-design-guidelines` |
-| **Architecture** | `ext-context-engineering`, `ext-recursive-decomposition`, `ext-subagent-driven-development`, `ext-skill-creator` |
-
-### Sound Notifications
-
-Hooks installed into `~/.claude/settings.json` that play sounds via `afplay`:
-
-| Event | Sound | Vibe |
-|-------|-------|------|
-| `Notification` | `heart-beat.mp3` | Claude needs attention |
-| `Stop` | `cinematic-boom.wav` | Response finished |
-| `TaskCompleted` | `cash-register.mp3` | Ka-ching |
-
-### Session Notes
-
-On `SessionEnd`, a background script summarizes the conversation transcript using AWS Bedrock and writes a markdown note to `~/Documents/LLM Engineering Notes/`. Trivial sessions (fewer than 4 user messages) are skipped.
+Agent skills and specialized agents for Claude Code.
 
 ## Install
 
 ```bash
-git clone https://github.com/corneliu-iancu/claude-code-config.git
-cd claude-code-config
-./install.sh
+npx skills@latest add corneliu-iancu/skills
 ```
 
-`install.sh` deep-merges the hook definitions into your existing `~/.claude/settings.json` using `jq`. Sound commands and session-notes scripts reference this repo by absolute path, so don't move it after installing.
+Or clone and link manually:
 
-## Repo Structure
-
-```
-claude-code-config/
-├── install.sh                  # Merges hooks into ~/.claude/settings.json
-├── settings-template.json      # Hook definitions (reference copy)
-├── play-sound.sh               # afplay wrapper (never blocks, never fails)
-├── sounds/
-│   ├── heart-beat.mp3
-│   ├── cinematic-boom.wav
-│   └── cash-register.mp3
-├── .claude/
-│   └── hooks/
-│       ├── session-notes-wrapper.sh   # Captures stdin, backgrounds Python
-│       ├── session-notes.py           # Parses transcript, calls Bedrock
-│       └── session-notes.conf.json    # Session notes configuration
-├── assets/
-│   └── banner.png
-├── CLAUDE.md
-└── README.md
+```bash
+git clone https://github.com/corneliu-iancu/skills.git
+cd skills
 ```
 
-## Configuration
+## Skills (7)
 
-Session notes are configured in `.claude/hooks/session-notes.conf.json`:
+| Bucket | Skill | Description |
+|--------|-------|-------------|
+| **frontend** | [react-best-practices](./skills/frontend/react-best-practices/SKILL.md) | React/Next.js performance patterns from Vercel Engineering |
+| **meta** | [context-engineering](./skills/meta/context-engineering/SKILL.md) | Context engineering for multi-agent architectures |
+| **meta** | [subagent-driven-development](./skills/meta/subagent-driven-development/SKILL.md) | Parallel subagent orchestration for implementation plans |
+| **quality** | [verification-before-completion](./skills/quality/verification-before-completion/SKILL.md) | Verify before claiming done — evidence before assertions |
+| **security** | [differential-review](./skills/security/differential-review/SKILL.md) | Security-focused diff review with blast radius calculation |
+| **security** | [insecure-defaults](./skills/security/insecure-defaults/SKILL.md) | Detect fail-open insecure defaults in production configs |
+| **testing** | [property-based-testing](./skills/testing/property-based-testing/SKILL.md) | Property-based testing across languages and smart contracts |
 
-| Key | Default | Description |
-|-----|---------|-------------|
-| `notes_path` | `~/Documents/LLM Engineering Notes` | Where notes are written |
-| `model` | `haiku` | Model name (`haiku`, `sonnet`, or a full model ID) |
-| `provider` | `auto` | `auto`, `anthropic`, or `bedrock` |
-| `aws_region` | `us-west-2` | AWS region (only used when provider is `bedrock`) |
-| `min_transcript_messages` | `4` | Skip sessions shorter than this |
-| `max_transcript_chars` | `120000` | Truncate long transcripts |
-| `enabled` | `true` | Kill switch |
+## Agents (5)
 
-Provider auto-detection checks for `ANTHROPIC_API_KEY` first, then `AWS_BEARER_TOKEN_BEDROCK`.
+| Bucket | Agent | Description |
+|--------|-------|-------------|
+| **frontend** | [accessibility-tester](./agents/frontend/accessibility-tester.md) | WCAG compliance and assistive technology assessment |
+| **performance** | [performance-engineer](./agents/performance/performance-engineer.md) | Bottleneck identification and profiling |
+| **quality** | [architect-reviewer](./agents/quality/architect-reviewer.md) | System design and architectural pattern evaluation |
+| **quality** | [code-reviewer](./agents/quality/code-reviewer.md) | Code quality, security, and best practices review |
+| **security** | [penetration-tester](./agents/security/penetration-tester.md) | Authorized offensive security testing |
 
-## Customization
+## Hooks
 
-**Swap sounds** — Drop any `.wav`/`.mp3` into `sounds/` and update the hook commands in `~/.claude/settings.json`.
+Sound notifications and session-notes summarization live in `hooks/`. See [hooks/README.md](./hooks/README.md) for configuration.
 
-**Disable session notes** — Set `"enabled": false` in `.claude/hooks/session-notes.conf.json`.
+## Structure
 
-## Requirements
-
-- **macOS** — sounds use `afplay`
-- **`jq`** — used by `install.sh` to merge JSON (`brew install jq`)
-- **Anthropic API key or AWS Bedrock credentials** — for session notes summarization
+```
+skills/
+├── .claude-plugin/plugin.json   # Plugin manifest
+├── skills/<bucket>/<name>/      # Skills (SKILL.md + references)
+├── agents/<bucket>/<name>.md    # Agent definitions
+├── hooks/                       # Sound + session-notes hooks
+├── sounds/                      # Audio files for hook notifications
+└── CLAUDE.md                    # Repo rules
+```
 
 ## License
 

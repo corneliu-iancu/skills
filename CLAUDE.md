@@ -1,24 +1,21 @@
-# Global Rules
+Skills and agents are organized into bucket folders:
 
-## Git
+**Skills** (`skills/`):
+- `frontend/` — UI frameworks, design patterns
+- `meta/` — agent orchestration, context engineering
+- `misc/` — kept around but rarely used
+- `quality/` — code review, verification
+- `security/` — vulnerability detection, secure defaults
+- `testing/` — test methodologies
 
-- Never amend commits unless explicitly asked.
-- Write concise commit messages — focus on "why", not "what".
-- Never force push to main/master.
+**Agents** (`agents/`):
+- `frontend/` — accessibility, UI review
+- `performance/` — profiling, bottleneck analysis
+- `quality/` — code review, architecture review
+- `security/` — penetration testing
 
-## Workflow
+Every skill in a non-empty bucket must have an entry in `.claude-plugin/plugin.json` and a line in the top-level `README.md`. Each bucket folder has a `README.md` listing its contents.
 
-- Read files before editing — never propose changes to code you haven't seen.
-- Investigate errors before retrying — don't brute-force the same failing approach.
-- Ask before destructive operations (deleting files, dropping tables, resetting branches).
+Each skill is a folder containing `SKILL.md` (with YAML frontmatter: `name`, `description`). Reference files and scripts live as siblings, loaded on demand.
 
-## Code
-
-- Prefer editing existing files over creating new ones.
-- Don't add comments, docstrings, or type annotations to code you didn't change.
-- Don't over-engineer — solve what was asked, nothing more.
-
-## Verification
-
-- After writing code, run the project's test/lint/build commands before reporting done.
-- If no test commands are known, ask.
+Each agent is a single `.md` file with YAML frontmatter (`name`, `description`, `tools`, `model`).
