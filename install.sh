@@ -1,65 +1,43 @@
 #!/usr/bin/env bash
-# Merges Claude Code hooks into ~/.claude/settings.json (non-destructive).
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
-SETTINGS="$HOME/.claude/settings.json"
+SKILLS_DEST="$HOME/.claude/skills"
+AGENTS_DEST="$HOME/.claude/agents"
 
-if ! command -v jq &>/dev/null; then
-  echo "Error: jq is required. Install with: brew install jq"
-  exit 1
-fi
+mkdir -p "$SKILLS_DEST" "$AGENTS_DEST"
 
-if [ ! -f "$SETTINGS" ]; then
-  echo "Error: $SETTINGS not found. Run Claude Code at least once first."
-  exit 1
-fi
+echo "=== Linking skills ==="
+find "$REPO_DIR/skills" -name SKILL.md -not -path '*/node_modules/*' -print0 |
+while IFS= read -r -d '' skill_md; do
+  src="$(dirname "$skill_md")"
+  name="$(basename "$src")"
+  target="$SKILLS_DEST/$name"
 
-HOOKS=$(cat <<EOF
-{
-  "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$REPO_DIR/play-sound.sh heart-beat.mp3"
-          }
-        ]
-      }
-    ],
-    "Stop": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$REPO_DIR/play-sound.sh cinematic-boom.wav"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "$REPO_DIR/.claude/hooks/session-notes-wrapper.sh",
-            "timeout": 60000
-          }
-        ]
-      }
-    ]
-  }
-}
-EOF
-)
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    echo "  skip: $name (non-symlink already exists)"
+    continue
+  fi
 
-# Deep-merge hooks into existing settings
-jq -s '.[0] * .[1]' "$SETTINGS" <(echo "$HOOKS") > "$SETTINGS.tmp" \
-  && mv "$SETTINGS.tmp" "$SETTINGS"
+  ln -sfn "$src" "$target"
+  echo "  linked: $name"
+done
 
-echo "Hooks installed into $SETTINGS"
-echo "Repo: $REPO_DIR"
+echo ""
+echo "=== Linking agents ==="
+find "$REPO_DIR/agents" -name "*.md" -not -name "README.md" -print0 |
+while IFS= read -r -d '' agent_md; do
+  name="$(basename "$agent_md" .md)"
+  target="$AGENTS_DEST/$name.md"
+
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    echo "  skip: $name (non-symlink already exists)"
+    continue
+  fi
+
+  ln -sfn "$agent_md" "$target"
+  echo "  linked: $name"
+done
+
+echo ""
+echo "Done. Skills and agents from $REPO_DIR are now available in Claude Code."

@@ -9,15 +9,12 @@ Agent skills and specialized agents for Claude Code.
 ## Install
 
 ```bash
-npx skills@latest add corneliu-iancu/skills
-```
-
-Or clone and link manually:
-
-```bash
 git clone https://github.com/corneliu-iancu/skills.git
 cd skills
+./install.sh
 ```
+
+This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agents/`, making them available alongside your existing ones. Skills appear as `/skill-name` — no namespacing.
 
 ## Skills (7)
 
@@ -41,10 +38,6 @@ cd skills
 | **quality** | [code-reviewer](./agents/quality/code-reviewer.md) | Code quality, security, and best practices review |
 | **security** | [penetration-tester](./agents/security/penetration-tester.md) | Authorized offensive security testing |
 
-## Hooks
-
-Sound notifications and session-notes summarization live in `hooks/`. See [hooks/README.md](./hooks/README.md) for configuration.
-
 ## Structure
 
 ```
@@ -52,8 +45,8 @@ skills/
 ├── .claude-plugin/plugin.json   # Plugin manifest
 ├── skills/<bucket>/<name>/      # Skills (SKILL.md + references)
 ├── agents/<bucket>/<name>.md    # Agent definitions
-├── hooks/                       # Sound + session-notes hooks
-├── sounds/                      # Audio files for hook notifications
+├── hooks/                       # Session-notes hook
+├── scripts/                     # Dev utilities
 └── CLAUDE.md                    # Repo rules
 ```
 
