@@ -16,7 +16,7 @@ cd skills
 
 This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agents/`, making them available alongside your existing ones. Skills appear as `/skill-name` — no namespacing.
 
-## Skills (8)
+## Skills (9)
 
 | Bucket | Skill | Description |
 |--------|-------|-------------|
@@ -24,6 +24,7 @@ This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agen
 | **meta** | [context-engineering](./skills/meta/context-engineering/SKILL.md) | Context engineering for multi-agent architectures |
 | **meta** | [subagent-driven-development](./skills/meta/subagent-driven-development/SKILL.md) | Parallel subagent orchestration for implementation plans |
 | **productivity** | [ask-better-questions](./skills/productivity/ask-better-questions/SKILL.md) | Refine questions through 7 Socratic lenses |
+| **productivity** | [caveman](./skills/productivity/caveman/SKILL.md) | Ultra-compressed communication — ~75% fewer tokens |
 | **quality** | [verification-before-completion](./skills/quality/verification-before-completion/SKILL.md) | Verify before claiming done — evidence before assertions |
 | **security** | [differential-review](./skills/security/differential-review/SKILL.md) | Security-focused diff review with blast radius calculation |
 | **security** | [insecure-defaults](./skills/security/insecure-defaults/SKILL.md) | Detect fail-open insecure defaults in production configs |
