@@ -6,6 +6,8 @@
     "./skills/meta/subagent-driven-development",
     "./skills/productivity/ask-better-questions",
     "./skills/productivity/caveman",
+    "./skills/productivity/grill-me",
+    "./skills/productivity/write-a-skill",
     "./skills/quality/verification-before-completion",
     "./skills/security/differential-review",
     "./skills/security/insecure-defaults",
