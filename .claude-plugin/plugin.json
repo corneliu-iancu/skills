@@ -1,0 +1,19 @@
+{
+  "name": "corneliu-skills",
+  "skills": [
+    "./skills/frontend/react-best-practices",
+    "./skills/meta/context-engineering",
+    "./skills/meta/subagent-driven-development",
+    "./skills/quality/verification-before-completion",
+    "./skills/security/differential-review",
+    "./skills/security/insecure-defaults",
+    "./skills/testing/property-based-testing"
+  ],
+  "agents": [
+    "./agents/frontend/accessibility-tester.md",
+    "./agents/performance/performance-engineer.md",
+    "./agents/quality/architect-reviewer.md",
+    "./agents/quality/code-reviewer.md",
+    "./agents/security/penetration-tester.md"
+  ]
+}
