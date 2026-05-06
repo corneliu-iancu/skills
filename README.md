@@ -1,3 +1,7 @@
+<p>
+  <img src="assets/banner.png" alt="AI Skills for Real Engineers" width="100%">
+</p>
+
 # Skills
 
 Agent skills and specialized agents for Claude Code.
