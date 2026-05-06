@@ -42,6 +42,35 @@ This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agen
 | **quality** | [code-reviewer](./agents/quality/code-reviewer.md) | Code quality, security, and best practices review |
 | **security** | [penetration-tester](./agents/security/penetration-tester.md) | Authorized offensive security testing |
 
+> [!NOTE]
+> **Adobe colleagues:** You can also install the **review-kit** plugin from the Experience Success marketplace. It provides multi-agent PR review with 27 specialized personas (staff engineer, SRE, security researcher, QA, etc.).
+>
+> **Setup:**
+> ```bash
+> # Add the marketplace (one-time)
+> /plugin marketplace add adobe/experience-success-skills
+>
+> # Install review-kit
+> /plugin install review-kit@adobe-experience-success
+>
+> # Reload to activate
+> /reload-plugins
+> ```
+>
+> **Usage:**
+> ```bash
+> # Review any PR — spawns a multi-agent team based on diff scope
+> /review-kit:pr-review https://github.com/org/repo/pull/123
+>
+> # Review without posting to GitHub (local only)
+> /review-kit:pr-review https://github.com/org/repo/pull/123
+> # → at the approval gate, say "don't post"
+> ```
+>
+> Other review-kit skills: `/review-kit:review-architecture`, `/review-kit:review-strategy`, `/review-kit:triage-pr-reviews`, `/review-kit:implement-pr-reviews`.
+>
+> See [adobe/experience-success-skills](https://github.com/adobe/experience-success-skills) for full docs.
+
 ## Structure
 
 ```
