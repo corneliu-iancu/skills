@@ -1,5 +1,5 @@
 <p>
-  <img src="assets/banner.png" alt="AI Skills for Real Engineers" width="100%">
+  <img src="assets/banner.png" alt="AI Skills for Real Engineers" width="50%">
 </p>
 
 # Skills
