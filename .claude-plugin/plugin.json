@@ -4,6 +4,7 @@
     "./skills/frontend/react-best-practices",
     "./skills/meta/context-engineering",
     "./skills/meta/subagent-driven-development",
+    "./skills/productivity/ask-better-questions",
     "./skills/quality/verification-before-completion",
     "./skills/security/differential-review",
     "./skills/security/insecure-defaults",
