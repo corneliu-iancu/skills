@@ -1,61 +1,22 @@
 # Hooks
 
-Scripts that run at specific events during Claude Code execution.
+Ideas for hooks I might want to add later.
 
-## Hook Events
+## Possible Hooks
 
-| Event | When It Fires | Use Case |
-|-------|---------------|----------|
-| `PreToolUse` | Before tool execution | Block edits on main, validate commands |
-| `PostToolUse` | After tool completes | Auto-format, run tests, lint |
-| `UserPromptSubmit` | User submits prompt | Add context, suggest skills |
-| `Stop` | Agent finishes | Decide if Claude should continue |
+- **Block edits on `main`** — `PreToolUse` on `Edit|Write` to prevent direct commits to the main branch.
+- **Auto-format on save** — `PostToolUse` on `Edit|Write` to run prettier/black/gofmt on changed files.
+- **Run tests on change** — `PostToolUse` on `Edit|Write` to run the relevant test file.
+- **Lint on change** — `PostToolUse` on `Edit|Write` to surface linter errors immediately.
+- **Suggest skills on prompt** — `UserPromptSubmit` to inject hints about relevant skills based on keywords.
+- **Inject project context** — `UserPromptSubmit` to add current branch, recent commits, or open tickets.
+- **Validate shell commands** — `PreToolUse` on `Shell` to block dangerous commands (`rm -rf`, `force push`, etc.).
+- **Session notes / journaling** — `Stop` to log what was done in the session.
+- **Continue-or-stop gate** — `Stop` to decide if the agent should keep going based on TODOs left.
+- **Secret scan before commit** — `PreToolUse` on `Shell` matching `git commit` to scan staged files.
 
-## Hook Response Format
+## Reference
 
-Hooks can output JSON to control behavior:
-
-```json
-{
-  "block": true,           // Block the action (PreToolUse only)
-  "message": "Reason",     // Message to show user
-  "feedback": "Info",      // Non-blocking feedback
-  "suppressOutput": true,  // Hide command output
-  "continue": false        // Whether to continue
-}
-```
-
-## Exit Codes
-
-- `0` - Success
-- `2` - Blocking error (PreToolUse only, blocks the tool)
-- Other - Non-blocking error
-
-## Configuration
-
-Hooks are configured in `settings.json`:
-
-```json
-{
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Edit|Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/my-hook.sh",
-            "timeout": 5
-          }
-        ]
-      }
-    ]
-  }
-}
-```
-
-## Files in This Directory
-
-- `session-notes-wrapper.sh` - Wrapper for session notes tracking
-- `session-notes.py` - Python script for session notes
-- `session-notes.conf.json` - Configuration for session notes
+- Events: `PreToolUse`, `PostToolUse`, `UserPromptSubmit`, `Stop`
+- Configured in `settings.json` under `"hooks"`.
+- Exit code `2` from a `PreToolUse` hook blocks the tool.

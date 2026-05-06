@@ -1,7 +1,0 @@
-{
-  "notes_path": "~/Documents/LLM Engineering Notes",
-  "model": "haiku",
-  "min_transcript_messages": 4,
-  "max_transcript_chars": 120000,
-  "enabled": true
-}
