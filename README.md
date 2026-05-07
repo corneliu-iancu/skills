@@ -32,15 +32,11 @@ This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agen
 | **security** | [insecure-defaults](./skills/security/insecure-defaults/SKILL.md) | Detect fail-open insecure defaults in production configs |
 | **testing** | [property-based-testing](./skills/testing/property-based-testing/SKILL.md) | Property-based testing across languages and smart contracts |
 
-## Agents (5)
+## Agents (1)
 
 | Bucket | Agent | Description |
 |--------|-------|-------------|
-| **frontend** | [accessibility-tester](./agents/frontend/accessibility-tester.md) | WCAG compliance and assistive technology assessment |
-| **performance** | [performance-engineer](./agents/performance/performance-engineer.md) | Bottleneck identification and profiling |
-| **quality** | [architect-reviewer](./agents/quality/architect-reviewer.md) | System design and architectural pattern evaluation |
 | **quality** | [code-reviewer](./agents/quality/code-reviewer.md) | Code quality, security, and best practices review |
-| **security** | [penetration-tester](./agents/security/penetration-tester.md) | Authorized offensive security testing |
 
 > [!NOTE]
 > **Adobe colleagues:** You can also install the **review-kit** plugin from the Experience Success marketplace. It provides multi-agent PR review with 27 specialized personas (staff engineer, SRE, security researcher, QA, etc.).

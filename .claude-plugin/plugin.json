@@ -14,10 +14,6 @@
     "./skills/testing/property-based-testing"
   ],
   "agents": [
-    "./agents/frontend/accessibility-tester.md",
-    "./agents/performance/performance-engineer.md",
-    "./agents/quality/architect-reviewer.md",
-    "./agents/quality/code-reviewer.md",
-    "./agents/security/penetration-tester.md"
+    "./agents/quality/code-reviewer.md"
   ]
 }
