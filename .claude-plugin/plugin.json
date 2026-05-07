@@ -1,8 +1,6 @@
 {
   "name": "corneliu-skills",
   "skills": [
-    "./skills/frontend/react-best-practices",
-    "./skills/meta/context-engineering",
     "./skills/meta/subagent-driven-development",
     "./skills/productivity/ask-better-questions",
     "./skills/productivity/caveman",
@@ -12,9 +10,7 @@
     "./skills/quality/improve-codebase-architecture",
     "./skills/quality/verification-before-completion",
     "./skills/quality/zoom-out",
-    "./skills/security/differential-review",
-    "./skills/security/insecure-defaults",
-    "./skills/testing/property-based-testing"
+    "./skills/security/insecure-defaults"
   ],
   "agents": []
 }
