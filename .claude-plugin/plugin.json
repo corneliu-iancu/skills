@@ -8,12 +8,13 @@
     "./skills/productivity/caveman",
     "./skills/productivity/grill-me",
     "./skills/productivity/write-a-skill",
+    "./skills/quality/diagnose",
+    "./skills/quality/improve-codebase-architecture",
     "./skills/quality/verification-before-completion",
+    "./skills/quality/zoom-out",
     "./skills/security/differential-review",
     "./skills/security/insecure-defaults",
     "./skills/testing/property-based-testing"
   ],
-  "agents": [
-    "./agents/quality/code-reviewer.md"
-  ]
+  "agents": []
 }

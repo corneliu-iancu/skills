@@ -4,7 +4,11 @@
 
 # Skills
 
-Agent skills and specialized agents for Claude Code.
+Agent skills for Claude Code.
+
+## Inspiration
+
+This repo is inspired by [mattpocock/skills](https://github.com/mattpocock/skills). If you're new to agent skills, watch his talk: [Software Fundamentals Matter More Than Ever](https://youtu.be/v4F1gFy-hqg).
 
 ## Install
 
@@ -14,9 +18,9 @@ cd skills
 ./install.sh
 ```
 
-This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agents/`, making them available alongside your existing ones. Skills appear as `/skill-name` — no namespacing.
+This symlinks all skills into `~/.claude/skills/`, making them available alongside your existing ones. Skills appear as `/skill-name` — no namespacing.
 
-## Skills (11)
+## Skills (14)
 
 | Bucket | Skill | Description |
 |--------|-------|-------------|
@@ -27,16 +31,13 @@ This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agen
 | **productivity** | [caveman](./skills/productivity/caveman/SKILL.md) | Ultra-compressed communication — ~75% fewer tokens |
 | **productivity** | [grill-me](./skills/productivity/grill-me/SKILL.md) | Relentless interview about your plan until every branch is resolved |
 | **productivity** | [write-a-skill](./skills/productivity/write-a-skill/SKILL.md) | Create new skills with proper structure and progressive disclosure |
+| **quality** | [diagnose](./skills/quality/diagnose/SKILL.md) | Disciplined debugging loop: reproduce, minimise, hypothesise, instrument, fix |
+| **quality** | [improve-codebase-architecture](./skills/quality/improve-codebase-architecture/SKILL.md) | Find deepening opportunities — modules to consolidate, coupling to break |
 | **quality** | [verification-before-completion](./skills/quality/verification-before-completion/SKILL.md) | Verify before claiming done — evidence before assertions |
+| **quality** | [zoom-out](./skills/quality/zoom-out/SKILL.md) | Explain unfamiliar code in context of the whole system |
 | **security** | [differential-review](./skills/security/differential-review/SKILL.md) | Security-focused diff review with blast radius calculation |
 | **security** | [insecure-defaults](./skills/security/insecure-defaults/SKILL.md) | Detect fail-open insecure defaults in production configs |
 | **testing** | [property-based-testing](./skills/testing/property-based-testing/SKILL.md) | Property-based testing across languages and smart contracts |
-
-## Agents (1)
-
-| Bucket | Agent | Description |
-|--------|-------|-------------|
-| **quality** | [code-reviewer](./agents/quality/code-reviewer.md) | Code quality, security, and best practices review |
 
 > [!NOTE]
 > **Adobe colleagues:** You can also install the **review-kit** plugin from the Experience Success marketplace. It provides multi-agent PR review with 27 specialized personas (staff engineer, SRE, security researcher, QA, etc.).
@@ -73,7 +74,6 @@ This symlinks all skills and agents into `~/.claude/skills/` and `~/.claude/agen
 skills/
 ├── .claude-plugin/plugin.json   # Plugin manifest
 ├── skills/<bucket>/<name>/      # Skills (SKILL.md + references)
-├── agents/<bucket>/<name>.md    # Agent definitions
 ├── hooks/                       # Session-notes hook
 ├── scripts/                     # Dev utilities
 └── CLAUDE.md                    # Repo rules
