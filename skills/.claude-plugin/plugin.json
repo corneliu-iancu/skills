@@ -18,6 +18,7 @@
     "./skills/productivity/grill-me",
     "./skills/productivity/humanizer",
     "./skills/productivity/write-a-skill",
+    "./skills/productivity/write-docs",
     "./skills/quality/diagnose",
     "./skills/quality/improve-codebase-architecture",
     "./skills/quality/verification-before-completion",

@@ -20,7 +20,7 @@ cd skills
 
 This symlinks all skills into `~/.claude/skills/`, making them available alongside your existing ones. Skills appear as `/skill-name` — no namespacing.
 
-## Skills (13)
+## Skills (14)
 
 | Bucket | Skill | Description |
 |--------|-------|-------------|
@@ -32,6 +32,7 @@ This symlinks all skills into `~/.claude/skills/`, making them available alongsi
 | **productivity** | [grill-me](./skills/productivity/grill-me/SKILL.md) | Relentless interview about your plan until every branch is resolved |
 | **productivity** | [humanizer](./skills/productivity/humanizer/SKILL.md) | Remove AI-writing patterns — makes text sound natural and human |
 | **productivity** | [write-a-skill](./skills/productivity/write-a-skill/SKILL.md) | Create new skills with proper structure and progressive disclosure |
+| **productivity** | [write-docs](./skills/productivity/write-docs/SKILL.md) | Write structured technical documentation from session context |
 | **quality** | [diagnose](./skills/quality/diagnose/SKILL.md) | Disciplined debugging loop: reproduce, minimise, hypothesise, instrument, fix |
 | **quality** | [improve-codebase-architecture](./skills/quality/improve-codebase-architecture/SKILL.md) | Find deepening opportunities — modules to consolidate, coupling to break |
 | **quality** | [verification-before-completion](./skills/quality/verification-before-completion/SKILL.md) | Verify before claiming done — evidence before assertions |
