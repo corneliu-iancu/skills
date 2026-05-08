@@ -3,9 +3,12 @@
   "description": "Personal productivity, quality, and security skills",
   "version": "1.0.0",
   "author": {
-    "name": "Corneliu Iancu"
+    "name": "Corneliu Iancu",
+    "email": "contact@corneliu-iancu.com"
   },
+  "homepage": "https://github.com/corneliu-iancu/skills",
   "repository": "https://github.com/corneliu-iancu/skills",
+  "license": "MIT",
   "skills": [
     "./skills/meta/subagent-driven-development",
     "./skills/productivity/ask-better-questions",
