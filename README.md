@@ -20,7 +20,7 @@ cd skills
 
 This symlinks all skills into `~/.claude/skills/`, making them available alongside your existing ones. Skills appear as `/skill-name` — no namespacing.
 
-## Skills (12)
+## Skills (13)
 
 | Bucket | Skill | Description |
 |--------|-------|-------------|
@@ -30,6 +30,7 @@ This symlinks all skills into `~/.claude/skills/`, making them available alongsi
 | **productivity** | [ask-better-questions](./skills/productivity/ask-better-questions/SKILL.md) | Refine questions through 7 Socratic lenses |
 | **productivity** | [caveman](./skills/productivity/caveman/SKILL.md) | Ultra-compressed communication — ~75% fewer tokens |
 | **productivity** | [grill-me](./skills/productivity/grill-me/SKILL.md) | Relentless interview about your plan until every branch is resolved |
+| **productivity** | [humanizer](./skills/productivity/humanizer/SKILL.md) | Remove AI-writing patterns — makes text sound natural and human |
 | **productivity** | [write-a-skill](./skills/productivity/write-a-skill/SKILL.md) | Create new skills with proper structure and progressive disclosure |
 | **quality** | [diagnose](./skills/quality/diagnose/SKILL.md) | Disciplined debugging loop: reproduce, minimise, hypothesise, instrument, fix |
 | **quality** | [improve-codebase-architecture](./skills/quality/improve-codebase-architecture/SKILL.md) | Find deepening opportunities — modules to consolidate, coupling to break |

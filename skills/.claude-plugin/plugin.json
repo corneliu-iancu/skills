@@ -16,6 +16,7 @@
     "./skills/productivity/ask-better-questions",
     "./skills/productivity/caveman",
     "./skills/productivity/grill-me",
+    "./skills/productivity/humanizer",
     "./skills/productivity/write-a-skill",
     "./skills/quality/diagnose",
     "./skills/quality/improve-codebase-architecture",
