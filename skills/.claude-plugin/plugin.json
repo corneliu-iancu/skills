@@ -8,5 +8,19 @@
   },
   "homepage": "https://github.com/corneliu-iancu/skills",
   "repository": "https://github.com/corneliu-iancu/skills",
-  "license": "MIT"
+  "license": "MIT",
+  "skills": [
+    "./skills/meta/brainstorming",
+    "./skills/meta/writing-plans",
+    "./skills/meta/subagent-driven-development",
+    "./skills/productivity/ask-better-questions",
+    "./skills/productivity/caveman",
+    "./skills/productivity/grill-me",
+    "./skills/productivity/write-a-skill",
+    "./skills/quality/diagnose",
+    "./skills/quality/improve-codebase-architecture",
+    "./skills/quality/verification-before-completion",
+    "./skills/quality/zoom-out",
+    "./skills/security/insecure-defaults"
+  ]
 }

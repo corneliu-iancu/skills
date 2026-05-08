@@ -20,10 +20,12 @@ cd skills
 
 This symlinks all skills into `~/.claude/skills/`, making them available alongside your existing ones. Skills appear as `/skill-name` — no namespacing.
 
-## Skills (10)
+## Skills (12)
 
 | Bucket | Skill | Description |
 |--------|-------|-------------|
+| **meta** | [brainstorming](./skills/meta/brainstorming/SKILL.md) | Socratic design refinement before any code |
+| **meta** | [writing-plans](./skills/meta/writing-plans/SKILL.md) | Bite-sized implementation plans with exact file paths |
 | **meta** | [subagent-driven-development](./skills/meta/subagent-driven-development/SKILL.md) | Parallel subagent orchestration for implementation plans |
 | **productivity** | [ask-better-questions](./skills/productivity/ask-better-questions/SKILL.md) | Refine questions through 7 Socratic lenses |
 | **productivity** | [caveman](./skills/productivity/caveman/SKILL.md) | Ultra-compressed communication — ~75% fewer tokens |
