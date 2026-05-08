@@ -1,6 +1,7 @@
 ---
 name: subagent-driven-development
 description: Use when executing implementation plans with independent tasks in the current session
+upstream: https://github.com/obra/superpowers/blob/main/skills/subagent-driven-development/SKILL.md
 ---
 
 # Subagent-Driven Development

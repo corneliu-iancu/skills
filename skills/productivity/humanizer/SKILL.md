@@ -1,6 +1,7 @@
 ---
 name: humanizer
 description: Remove AI-writing patterns from text — makes writing sound natural and human. Use when editing or reviewing prose.
+upstream: https://github.com/blader/humanizer/blob/main/SKILL.md
 ---
 
 # Humanizer: Remove AI Writing Patterns

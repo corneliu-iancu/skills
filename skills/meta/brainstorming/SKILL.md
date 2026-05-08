@@ -1,6 +1,7 @@
 ---
 name: brainstorming
 description: "You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."
+upstream: https://github.com/obra/superpowers/blob/main/skills/brainstorming/SKILL.md
 ---
 
 # Brainstorming Ideas Into Designs

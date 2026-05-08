@@ -1,6 +1,7 @@
 ---
 name: writing-plans
 description: Use when you have a spec or requirements for a multi-step task, before touching code
+upstream: https://github.com/obra/superpowers/blob/main/skills/writing-plans/SKILL.md
 ---
 
 # Writing Plans
