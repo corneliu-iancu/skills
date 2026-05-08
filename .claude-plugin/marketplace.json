@@ -3,14 +3,14 @@
   "owner": {
     "name": "Corneliu Iancu"
   },
-  "description": "Personal Claude Code skills",
-  "version": "1.0.0",
+  "metadata": {
+    "description": "Personal Claude Code skills"
+  },
   "plugins": [
     {
       "name": "corneliu-skills",
-      "description": "Personal productivity, quality, and security skills",
-      "version": "1.0.0",
-      "source": "."
+      "source": ".",
+      "description": "Personal productivity, quality, and security skills"
     }
   ]
 }
