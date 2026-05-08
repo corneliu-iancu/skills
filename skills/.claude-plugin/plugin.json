@@ -1,7 +1,7 @@
 {
   "name": "corneliu-skills",
   "description": "Personal productivity, quality, and security skills",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "name": "Corneliu Iancu",
     "email": "contact@corneliu-iancu.com"
@@ -10,19 +10,19 @@
   "repository": "https://github.com/corneliu-iancu/skills",
   "license": "MIT",
   "skills": [
-    "./skills/meta/brainstorming",
-    "./skills/meta/writing-plans",
-    "./skills/meta/subagent-driven-development",
-    "./skills/productivity/ask-better-questions",
-    "./skills/productivity/caveman",
-    "./skills/productivity/grill-me",
-    "./skills/productivity/humanizer",
-    "./skills/productivity/write-a-skill",
-    "./skills/productivity/write-docs",
-    "./skills/quality/diagnose",
-    "./skills/quality/improve-codebase-architecture",
-    "./skills/quality/verification-before-completion",
-    "./skills/quality/zoom-out",
-    "./skills/security/insecure-defaults"
+    "./meta/brainstorming",
+    "./meta/writing-plans",
+    "./meta/subagent-driven-development",
+    "./productivity/ask-better-questions",
+    "./productivity/caveman",
+    "./productivity/grill-me",
+    "./productivity/humanizer",
+    "./productivity/write-a-skill",
+    "./productivity/write-docs",
+    "./quality/diagnose",
+    "./quality/improve-codebase-architecture",
+    "./quality/verification-before-completion",
+    "./quality/zoom-out",
+    "./security/insecure-defaults"
   ]
 }
