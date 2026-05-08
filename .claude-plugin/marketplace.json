@@ -1,0 +1,16 @@
+{
+  "name": "corneliu-skills",
+  "owner": {
+    "name": "Corneliu Iancu"
+  },
+  "description": "Personal Claude Code skills",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "corneliu-skills",
+      "description": "Personal productivity, quality, and security skills",
+      "version": "1.0.0",
+      "source": "."
+    }
+  ]
+}
