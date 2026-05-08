@@ -1,0 +1,22 @@
+{
+  "name": "corneliu-skills",
+  "description": "Personal productivity, quality, and security skills",
+  "version": "1.0.0",
+  "author": {
+    "name": "Corneliu Iancu"
+  },
+  "repository": "https://github.com/corneliu-iancu/skills",
+  "skills": [
+    "../skills/meta/subagent-driven-development",
+    "../skills/productivity/ask-better-questions",
+    "../skills/productivity/caveman",
+    "../skills/productivity/grill-me",
+    "../skills/productivity/write-a-skill",
+    "../skills/quality/diagnose",
+    "../skills/quality/improve-codebase-architecture",
+    "../skills/quality/verification-before-completion",
+    "../skills/quality/zoom-out",
+    "../skills/security/insecure-defaults"
+  ],
+  "agents": []
+}

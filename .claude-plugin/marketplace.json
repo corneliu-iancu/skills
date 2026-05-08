@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "corneliu-skills",
-      "source": ".",
+      "source": "./plugin",
       "description": "Personal productivity, quality, and security skills"
     }
   ]
